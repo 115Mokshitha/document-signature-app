@@ -143,7 +143,7 @@ export const DocumentViewer = () => {
         <DndContext onDragEnd={handleDragEnd}>
           <div className="relative bg-white shadow-2xl border border-gray-200 h-fit">
             <Document 
-              file={`https://document-signature-app-h0di.onrender.com/5000/${doc.filePath.replace(/\\/g, '/')}`} 
+              file={`https://document-signature-app-h0di.onrender.com/${doc.filePath.replace(/\\/g, '/')}`} 
               onLoadSuccess={onDocumentLoadSuccess}
               loading={<div className="p-20 font-bold text-gray-300 uppercase tracking-widest text-center">Loading PDF...</div>}
             >

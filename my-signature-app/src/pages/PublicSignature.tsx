@@ -78,7 +78,7 @@ export const PublicSignature = () => {
   try {
     setLoading(true);
     // ✅ Change the URL to include /public/ before /reject/
-    await axios.post(`https://document-signature-app-h0di.onrender.com/5000/api/signatures/public/reject/${doc._id}`, { reason });
+    await axios.post(`https://document-signature-app-h0di.onrender.com/api/signatures/public/reject/${doc._id}`, { reason });
     
     alert("Document has been rejected. The owner will be notified.");
     navigate("/login"); 
@@ -105,7 +105,7 @@ export const PublicSignature = () => {
       const signatureImage = canvas.toDataURL("image/png");
 
       const saveRes = await fetch(
-        "https://document-signature-app-h0di.onrender.com/5000/api/signatures/public",
+        "https://document-signature-app-h0di.onrender.com/api/signatures/public",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -122,7 +122,7 @@ export const PublicSignature = () => {
       if (!saveRes.ok) throw new Error("Error saving signature");
 
       const finalizeRes = await fetch(
-        `https://document-signature-app-h0di.onrender.com/5000/api/signatures/public/finalize/${doc._id}`,
+        `https://document-signature-app-h0di.onrender.com/api/signatures/public/finalize/${doc._id}`,
         { method: "POST" }
       );
 
@@ -208,7 +208,7 @@ export const PublicSignature = () => {
         <DndContext onDragEnd={handleDragEnd}>
           <div className="relative bg-white shadow-2xl h-fit">
             <Document
-              file={`https://document-signature-app-h0di.onrender.com/5000/${doc.filePath.replace(/\\/g, "/")}`}
+              file={`https://document-signature-app-h0di.onrender.com/${doc.filePath.replace(/\\/g, "/")}`}
               onLoadSuccess={onDocumentLoadSuccess}
             >
               <Page pageNumber={pageNumber} width={600} renderTextLayer={false} renderAnnotationLayer={false} />

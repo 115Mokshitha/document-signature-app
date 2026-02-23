@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://document-signature-app-h0di.onrender.com/5000/api',
+  baseURL: 'https://document-signature-app-h0di.onrender.com/api',
 });
 
 // Interceptor to attach JWT token to every request automatically
