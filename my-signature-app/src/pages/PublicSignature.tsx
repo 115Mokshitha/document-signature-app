@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import  { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom"; // ✅ Added useNavigate
 import { Document, Page, pdfjs } from "react-pdf";
 import { DndContext, useDraggable } from "@dnd-kit/core";

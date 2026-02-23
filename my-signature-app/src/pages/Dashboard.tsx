@@ -54,7 +54,7 @@
 //     </div>
 //   );
 // };
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { docAPI } from '../api';
 import { Link } from 'react-router-dom';
 
